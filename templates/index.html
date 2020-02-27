@@ -38,6 +38,10 @@
     
     
     <div class="max-w-700 bg-white mx-auto py-5 pb-4 px-4 my-4">
+       <h6 class="mb-3  text-danger text-center">
+          {% with messages = get_flashed_messages(category_filter=['message']) %} {{ messages[0] }} {% endwith
+          %}
+        </h6>
       <form action="/process-guess" method="GET">
         <!-- <p>Computer Number is {{random}}</p> -->
         <div class="form-group mb-4 text-left">
@@ -63,15 +67,12 @@
         </div>
       </form>
       <div class="w-100 mt-4">
-          <h5 class="mb-2 text-left text-secondary"><span style="display: inline-block; min-width: 35%;"
-            >Maximum Attempts:</span><span class="text-primary">3</span></h5>
+          <h4 class="mb-2 text-left text-secondary"><span style="display: inline-block; min-width: 35%;"
+            >Maximum Attempts:</span><span class="text-primary">3</span></h4>
 
-        <h5 class="text-left text-secondary  mb-0"> <span style="display: inline-block; min-width: 35%;"
-            >Total Tries:</span><span class="text-danger">{{tries}}</span></h5>
-        <h6 class="mt-4 mb-0 text-danger text-center">
-          {% with messages = get_flashed_messages(category_filter=['message']) %} {{ messages[0] }} {% endwith
-          %}
-        </h6>
+        <h4 class="text-left text-secondary  mb-0"> <span style="display: inline-block; min-width: 35%;"
+            >Total Tries:</span><span class="text-danger">{{tries}}</span></h4>
+       
       </div>
     </div>
    
