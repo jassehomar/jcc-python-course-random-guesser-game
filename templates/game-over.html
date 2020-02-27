@@ -10,8 +10,25 @@
       href="{{url_for('static',filename='bootstrap.css')}}"
     />
     <style>
+      h1 {
+        font-size: 3rem;
+      }
+      h4 {
+        font-size: 1.4rem;
+      }
       .max-w-700 {
         max-width: 700px;
+      }
+      @media (max-width: 700px) {
+        h1 {
+          font-size: 2rem;
+        }
+        h5 {
+          font-size: 1.2rem;
+        }
+        h6 {
+          font-size: 1.1rem;
+        }
       }
     </style>
   </head>
