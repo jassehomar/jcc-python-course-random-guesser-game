@@ -10,15 +10,36 @@
       href="{{url_for('static',filename='bootstrap.css')}}"
     />
     <style>
+      h1 {
+        font-size: 3rem;
+      }
+      h4 {
+        font-size: 1.4rem;
+      }
       .max-w-700 {
         max-width: 700px;
+      }
+      @media(max-width: 700px){
+        h1 {
+          font-size: 2rem;
+        }
+         h5 {
+          font-size: 1.2rem;
+         }
+         h6 {
+           font-size: 1.1rem;
+         }
       }
     </style>
   </head>
   <body class="text-center py-5 px-4">
     <h1 class="font-weight-bold mb-3">Random Gueser Game</h1>
-    <h3>Guess a Number between 1 and 5 ( Inclusive )</h3>
+    <h4>Guess a Number between 1 and 5 ( Inclusive )</h4>
     
+     <h6 class="mt-3 text-danger">
+      {% with messages = get_flashed_messages(category_filter=['message']) %} {{ messages[0] }} {% endwith
+      %}
+    </h6>
     <div class="max-w-700 bg-white mx-auto py-5 px-4 my-4">
       <form action="/process-guess" method="GET">
         <!-- <p>Computer Number is {{random}}</p> -->
@@ -53,10 +74,7 @@
     
     </div>
     </div>
-    <h5 class="mb-3 text-danger">
-      {% with messages = get_flashed_messages(category_filter=['message']) %} {{ messages[0] }} {% endwith
-      %}
-    </h5>
+   
     
   </body>
 </html>
