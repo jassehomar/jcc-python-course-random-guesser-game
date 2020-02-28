@@ -24,6 +24,8 @@ def home():
 @app.route('/process-guess')
 def process_guess():
 
+    if 'random_number' not in session or not request.args.get('number'):
+        return redirect("/")
     # get the user inputted number
     guessed_number = request.args.get('number')
 
